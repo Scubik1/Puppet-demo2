@@ -53,3 +53,4 @@ node master.puppet {
   package { 'mc':
     ensure => installed,
   }
+}
