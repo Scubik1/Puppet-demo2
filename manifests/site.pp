@@ -49,7 +49,7 @@ node slave2.puppet {
   }
 }
 
-node slave2.puppet {
+node master.puppet {
   package { 'mc':
     ensure => installed,
   }
