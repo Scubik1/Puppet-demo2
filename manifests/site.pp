@@ -48,3 +48,8 @@ node slave2.puppet {
     path      => '/usr/bin',
   }
 }
+
+node slave2.puppet {
+  package { 'mc':
+    ensure => installed,
+  }
