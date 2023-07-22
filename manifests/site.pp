@@ -44,13 +44,13 @@ node slave2.puppet {
     ensure => present,
     source => "/vagrant/index.php",
   }
-#  service { 'php-fpm':
- #   ensure => running,
-  #  enable => true,
-  #}
   service { 'httpd':
     ensure => running,
     enable => true,
   }
   include firewall_open_port_80
+}
+
+node mineserver.puppet {
+  include minecraft
 }
