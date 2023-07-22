@@ -10,6 +10,11 @@ node master.puppet {
   }
   include firewall_open_port_80
   include firewall_open_port_81
+  selboolean { 'On httpd_can_network_connect in SELinux':
+    name       => 'httpd_can_network_connect',
+    persistent => true,
+    value      => on,
+  }
 }
 
 
