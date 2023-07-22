@@ -1,0 +1,10 @@
+[Unit]
+Description=Minecraft Server
+
+[Service]
+WorkingDirectory=/opt/minecraft/
+ExecStart=/usr/bin/java -Xmx1024M -Xms1024M -jar server.jar nogui
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
