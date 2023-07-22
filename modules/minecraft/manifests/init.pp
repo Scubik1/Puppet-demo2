@@ -1,6 +1,6 @@
 class minecraft {
   package {  'Install java':
-    name   => java-17-openjdk,
+    name   => java-17-openjdk.x86_64,
     ensure => present,
   }
   file { '/opt/minecraft':
