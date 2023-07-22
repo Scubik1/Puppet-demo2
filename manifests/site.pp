@@ -9,16 +9,16 @@ node master.puppet {
     proxy       => 'http://192.168.50.15',
   }
   
-  class { 'firewalld': }
+#  class { 'firewalld': }
   
-  class firewall_node1 {
-    firewalld_port { 'Open 80 and 81 ports':
-      ensure   => present,
-      zone     => 'public',
-      port     => 80,
-      protocol => 'tcp',
-    }
-  }
+#  class firewall_node1 {
+#    firewalld_port { 'Open 80 and 81 ports':
+#      ensure   => present,
+#      zone     => 'public',
+#      port     => 80,
+#      protocol => 'tcp',
+#    }
+#  }
   include firewall_node1
 }
 
