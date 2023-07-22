@@ -11,7 +11,6 @@ class minecraft {
     ensure => file,
     source => 'https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar',
   } 
-  }
   file { '/opt/minecraft/eula.txt':
     content => "eula=true",
    # require => Exec['init start server'],
