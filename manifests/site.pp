@@ -8,18 +8,8 @@ node master.puppet {
     listen_port => 81,
     proxy       => 'http://192.168.50.15',
   }
-  
-#  class { 'firewalld': }
-  
-#  class firewall_node1 {
-#    firewalld_port { 'Open 80 and 81 ports':
-#      ensure   => present,
-#      zone     => 'public',
-#      port     => 80,
-#      protocol => 'tcp',
-#    }
-#  }
-  include firewall_node1
+  include firewall_open_port_80
+  include firewall_open_port_81
 }
 
 
@@ -35,14 +25,7 @@ node slave1.puppet {
     ensure => running,
     enable => true,
   }
-  exec {'Add port to firewall':
-    path    => '/usr/bin',
-    command => 'firewall-cmd --add-port=80/tcp --permanent',
-  }
-  exec { 'Restart firewall':
-    command => '/usr/bin/systemctl restart firewalld',
-    path    => '/usr/bin',
-  }
+  include firewall_open_port_80
 }
 
 node slave2.puppet {
@@ -64,12 +47,7 @@ node slave2.puppet {
     ensure => running,
     enable => true,
   }
-  exec {'Add port to firewall':
-    path    => '/usr/bin',
-    command => 'firewall-cmd --add-port=80/tcp --permanent',
-  }
-  exec { 'Restart firewall':
-    command => '/usr/bin/systemctl restart firewalld',
+  include firewall_open_port_80
     path    => '/usr/bin',
   }
 }
