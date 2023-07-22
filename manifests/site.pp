@@ -8,16 +8,16 @@ node master.puppet {
     listen_port => 81,
     proxy       => 'http://192.168.50.15',
   }
-#  class { 'firewalld': }
-#  class firewall_node1 {
-#    firewalld_port { 'Open 80 and 81 ports':
-#      ensure   => present,
-#      zone     => 'public',
-#      port     => 80,
-#      protocol => 'tcp',
-#    }
-#  }
-#  include firewall_node1
+  class { 'firewalld': }
+  class firewall_node1 {
+    firewalld_port { 'Open 80 and 81 ports':
+      ensure   => present,
+      zone     => 'public',
+      port     => 80,
+      protocol => 'tcp',
+    }
+  }
+  include firewall_node1
 }
 
 
