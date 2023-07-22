@@ -17,6 +17,7 @@ node master.puppet {
       protocol => 'tcp',
     }
   }
+  include firewall_node1
 }
 
 
