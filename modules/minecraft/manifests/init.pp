@@ -1,5 +1,5 @@
 class minecraft {
-  package {  'java':
+  package {  'Install java':
     name   => java-17-openjdk,
     ensure => present,
   }
