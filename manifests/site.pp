@@ -48,6 +48,4 @@ node slave2.puppet {
     enable => true,
   }
   include firewall_open_port_80
-    path    => '/usr/bin',
-  }
 }
