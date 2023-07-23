@@ -13,7 +13,6 @@ class minecraft {
   } 
   file { '/opt/minecraft/eula.txt':
     content => "eula=true",
-   # require => Exec['init start server'],
   }  
   file { '/etc/systemd/system/minecraft.service':
     ensure => file,
@@ -22,6 +21,5 @@ class minecraft {
   service { 'minecraft.service':
     ensure => running,
     enable => true,
-    #require => File['/etc/systemd/system/minecraft.service'],
   }
 }
