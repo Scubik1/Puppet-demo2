@@ -32,6 +32,6 @@
       ensure   => present,
       zone     => 'public',
       port     => 25565,
-      protocol => 'tcp',
+      protocol => 'udp',
     }
   }
