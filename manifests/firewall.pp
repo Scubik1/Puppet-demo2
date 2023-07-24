@@ -19,7 +19,7 @@
   }
 
   class firewall_open_port_25565_tcp {
-    firewalld_port { 'Open port 25565':
+    firewalld_port { 'Open port 25565 tcp':
       ensure   => present,
       zone     => 'public',
       port     => 25565,
@@ -28,7 +28,7 @@
   }
 
   class firewall_open_port_25565_udp {
-    firewalld_port { 'Open port 25565':
+    firewalld_port { 'Open port 25565 udp':
       ensure   => present,
       zone     => 'public',
       port     => 25565,
