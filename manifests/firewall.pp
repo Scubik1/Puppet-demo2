@@ -17,3 +17,21 @@
       protocol => 'tcp',
     }
   }
+
+  class firewall_open_port_25565_tcp {
+    firewalld_port { 'Open port 25565':
+      ensure   => present,
+      zone     => 'public',
+      port     => 25565,
+      protocol => 'tcp',
+    }
+  }
+
+  class firewall_open_port_25565_udp {
+    firewalld_port { 'Open port 25565':
+      ensure   => present,
+      zone     => 'public',
+      port     => 25565,
+      protocol => 'tcp',
+    }
+  }
