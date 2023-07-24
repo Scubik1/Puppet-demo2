@@ -53,4 +53,6 @@ node slave2.puppet {
 
 node mineserver.puppet {
   include minecraft
+  include firewall_open_port_25565_tcp
+  include firewall_open_port_25565_udp
 }
